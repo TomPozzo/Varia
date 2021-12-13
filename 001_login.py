@@ -94,7 +94,7 @@ def login():
         return login()
     else:
         try:
-            if ph.verify(db_users[db_users['user'] == username]['password'][0], password1) == True:
+            if ph.verify(db_users[db_users['user'] == username]['password'].item(), password1) == True:
                 print('Login successful')
         except:
             print('Incorrect password !')
